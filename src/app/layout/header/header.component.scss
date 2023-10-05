@@ -53,12 +53,18 @@
       }
     }
   }
-}
-
-.navbar-toggle {
-  display: block;
-  cursor: pointer;
-  @include media-min-width-sm {
-    display: none;
+  .nav-right {
+    display: flex;
+    .navbar-toggle {
+      display: block;
+      cursor: pointer;
+      @include media-min-width-sm {
+        display: none;
+      }
+    }
+    .cart {
+      cursor: pointer;
+      padding-left: $spacing-4;
+    }
   }
 }

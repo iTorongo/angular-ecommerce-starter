@@ -1,6 +1,6 @@
 <header class="header">
   <nav class="navbar">
-    <div class="navbar-logo" [routerLink]="'/'">lOgO</div>
+    <div class="navbar-logo" [routerLink]="'/'">lOgOo</div>
     <ul class="navbar-menu" [ngClass]="{ 'is-open': menuOpen }">
       <li>
         <a [routerLink]="'/'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
@@ -12,9 +12,14 @@
         <a [routerLink]="'/about'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
       </li>
     </ul>
-    <div class="navbar-toggle" (click)="toggleMenu()">
-      <fa-icon *ngIf="!menuOpen" [icon]="faBars"></fa-icon>
-      <fa-icon *ngIf="menuOpen" [icon]="faXmark"></fa-icon>
+    <div class="nav-right">
+      <div class="navbar-toggle" (click)="toggleMenu()">
+        <fa-icon *ngIf="!menuOpen" [icon]="faBars"></fa-icon>
+        <fa-icon *ngIf="menuOpen" [icon]="faXmark"></fa-icon>
+      </div>
+
+      <fa-icon class="cart" [icon]="faCartShopping"></fa-icon>
     </div>
+
   </nav>
 </header>
