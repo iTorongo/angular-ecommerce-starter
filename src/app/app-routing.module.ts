@@ -1,17 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppRoutes } from './core/enums/routes.enum';
 import { DefaultLayoutComponent } from './layout/default-layout/default-layout.component';
 
 const routes: Routes = [
   {
-    path: '/',
+    path: AppRoutes.HOME,
     title: 'Home',
     component: DefaultLayoutComponent,
     loadChildren: () =>
       import('./features/home/home.module').then((module) => module.HomeModule),
   },
   {
-    path: '404',
+    path: AppRoutes.PRODUCTS,
+    title: 'Products',
+    component: DefaultLayoutComponent,
+    loadChildren: () =>
+      import('./features/products/products.module').then(
+        (module) => module.ProductsModule
+      ),
+  },
+  {
+    path: AppRoutes.NOT_FOUND,
     title: 'Not found',
     component: DefaultLayoutComponent,
     loadChildren: () =>
