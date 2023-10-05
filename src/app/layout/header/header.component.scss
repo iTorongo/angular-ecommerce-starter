@@ -1,0 +1,64 @@
+@import "../../../styles/mixin";
+@import "../../../styles/colors";
+@import "../../../styles/variables";
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $bg-white;
+  color: $default-color;
+  padding: $spacing-3 $spacing-5;
+  border: 1px solid $gray-3;
+
+  .navbar-logo {
+    font-size: $font-size-6;
+    font-weight: $font-weight-600;
+    cursor: pointer;
+  }
+
+  .navbar-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include media-min-width-sm {
+      display: flex;
+    }
+    &.is-open {
+      display: block;
+      position: absolute;
+      top: $header-height;
+      left: 0;
+      width: 100%;
+      background-color: $bg-white;
+    }
+
+    li {
+      padding: $spacing-2;
+    }
+    a {
+      text-decoration: none;
+      color: $default-color;
+      padding: 0 $spacing-1;
+      &.active {
+        border-bottom: 2px solid $blue-6;
+      }
+    }
+  }
+}
+
+.navbar-toggle {
+  display: block;
+  cursor: pointer;
+  @include media-min-width-sm {
+    display: none;
+  }
+}

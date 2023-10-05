@@ -1,0 +1,20 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-logo" [routerLink]="'/'">lOgO</div>
+    <ul class="navbar-menu" [ngClass]="{ 'is-open': menuOpen }">
+      <li>
+        <a [routerLink]="'/'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      </li>
+      <li>
+        <a [routerLink]="'/products'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Products</a>
+      </li>
+      <li>
+        <a [routerLink]="'/about'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
+      </li>
+    </ul>
+    <div class="navbar-toggle" (click)="toggleMenu()">
+      <fa-icon *ngIf="!menuOpen" [icon]="faBars"></fa-icon>
+      <fa-icon *ngIf="menuOpen" [icon]="faXmark"></fa-icon>
+    </div>
+  </nav>
+</header>
