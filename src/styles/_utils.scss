@@ -1,0 +1,14 @@
+@import "../styles/colors";
+@import "../styles/variables";
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-secondary {
+  color: $gray-6;
+  font-size: calc($font-size-4 - 2px);
+  line-height: 20px;
+}
