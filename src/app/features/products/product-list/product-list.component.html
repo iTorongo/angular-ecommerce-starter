@@ -1,7 +1,8 @@
 <section class="products">
+  <app-search-input (search)="onSearch($event)" />
   <div class="row">
     <ng-container *ngIf="(products$ | async)?.products as products; else loading">
-      <div class="col-2" *ngFor="let product of products | sort: sortBy ">
+      <div class="col-2" *ngFor="let product of products">
         <app-product-card [product]="product"></app-product-card>
       </div>
       <app-empty *ngIf="products.length  === 0" />
