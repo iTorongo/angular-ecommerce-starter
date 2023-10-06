@@ -4,7 +4,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductsRoutingRoutingModule } from './products-routing.module';
 import { SharedModule } from '../../shared/shared.module';
-import { ButtonComponent } from '../../standalone/components';
+import { ButtonComponent, EmptyComponent } from '../../standalone/components';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -13,8 +13,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     ProductsRoutingRoutingModule,
     SharedModule,
-    ButtonComponent,
     FontAwesomeModule,
+    ButtonComponent,
+    EmptyComponent,
   ],
 })
 export class ProductsModule {}

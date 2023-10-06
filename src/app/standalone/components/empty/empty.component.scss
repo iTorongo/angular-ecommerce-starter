@@ -1,0 +1,14 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/colors";
+
+.empty-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .empty-text {
+    color: $gray-5;
+    font-size: $font-size-4;
+    text-align: center;
+    padding: $spacing-4;
+  }
+}
