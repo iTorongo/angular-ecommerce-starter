@@ -8,7 +8,7 @@ import {
   SearchInputComponent,
   SkeletonCardComponent,
 } from './components/';
-import { TruncatePipe } from './pipes';
+import { TruncatePipe, SortPipe } from './pipes';
 import { ButtonComponent, IconComponent } from '../standalone/components';
 import { SelectInputComponent } from './components/select-input/select-input.component';
 
@@ -20,6 +20,7 @@ import { SelectInputComponent } from './components/select-input/select-input.com
     SkeletonCardComponent,
     SelectInputComponent,
     TruncatePipe,
+    SortPipe,
   ],
   imports: [
     CommonModule,
@@ -39,6 +40,7 @@ import { SelectInputComponent } from './components/select-input/select-input.com
     SelectInputComponent,
     // Pipes
     TruncatePipe,
+    SortPipe,
   ],
 })
 export class SharedModule {}
