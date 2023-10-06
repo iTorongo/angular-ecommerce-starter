@@ -6,7 +6,7 @@
   <div class="product-info">
     <h4 class="product-title text-truncate">{{ product.title }}</h4>
     <p class="product-description text-secondary">
-      {{product.description }}
+      {{product.description | truncate }}
     </p>
     <p class="product-rating">
       <fa-icon [icon]="faStar" class="product-rating-icon"></fa-icon>
