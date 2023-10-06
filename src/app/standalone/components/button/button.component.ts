@@ -13,9 +13,9 @@ export class ButtonComponent {
   @Input() type: 'primary' | 'secondary' = 'primary';
   @Input() size: 'small' | 'normal' | 'large' = 'normal';
 
-  @Output() click = new EventEmitter<void>();
+  @Output() buttonClick = new EventEmitter<void>();
 
   onClick(): void {
-    this.click.emit();
+    this.buttonClick.emit();
   }
 }
