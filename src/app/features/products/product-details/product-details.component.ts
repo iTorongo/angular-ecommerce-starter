@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { ProductsService } from '../products.service';
 import { Location } from '@angular/common';
 import { IconType } from '../../../core/enums/icons.enum';
+import { CartService } from '***REMOVED***app/shared/services/cart/cart.service';
+import { Cart, CartRequest, Product } from '***REMOVED***app/core/types';
+import { DUMMY_USER_ID } from '***REMOVED***app/core/const/config.const';
 
 @Component({
   selector: 'app-product-details',
@@ -22,7 +25,8 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productsService: ProductsService,
-    private location: Location
+    private location: Location,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -39,8 +43,23 @@ export class ProductDetailsComponent implements OnInit {
     this.product$ = this.productsService.getProduct(this.productId);
   }
 
-  addToCart() {
-    console.log('Product added to cart');
+  onAddToCart(product: Product) {
+    const requestPayload: CartRequest = {
+      userId: DUMMY_USER_ID,
+      products: [
+        {
+          id: product.id,
+          quantity: 1,
+        },
+      ],
+    };
+    this.addProductToCart(requestPayload);
+  }
+
+  addProductToCart(requestPayload: CartRequest) {
+    this.cartService.addToCart(requestPayload)?.subscribe(() => {
+      this.cartService.initialGetCart();
+    });
   }
 
   backTo() {
