@@ -1,0 +1,27 @@
+@import "../../../../styles//variables";
+@import "../../../../styles//colors";
+
+.search-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-white;
+  border: 1px solid $gray-3;
+  border-radius: $border-radius-8;
+  margin-bottom: $spacing-4;
+  padding: 0 $spacing-3;
+  .input-field {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: $spacing-4;
+    padding: $spacing-3 $spacing-4;
+    &::placeholder {
+      color: $gray-5;
+    }
+  }
+  .search-icon,
+  .clear-icon {
+    color: $gray-5;
+  }
+}

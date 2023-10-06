@@ -1,0 +1,5 @@
+<div class="search-input">
+    <fa-icon class="search-icon" [icon]="faMagnifyingGlass"></fa-icon>
+    <input type="text" class="input-field" placeholder="Search product..." [formControl]="searchQuery" />
+    <fa-icon *ngIf="!!searchQuery.value" class="clear-icon" [icon]="faCircleXmark" (click)="onClearSearch()"></fa-icon>
+</div>

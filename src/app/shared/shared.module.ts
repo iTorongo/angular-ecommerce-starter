@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TruncatePipe } from './pipes/truncate.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   HeroSectionComponent,
   ProductCardComponent,
+  SearchInputComponent,
   SkeletonCardComponent,
 } from './components/';
+import { TruncatePipe } from './pipes';
 import { ButtonComponent } from '../standalone/components';
-import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
-    TruncatePipe,
     HeroSectionComponent,
+    SearchInputComponent,
     ProductCardComponent,
     SkeletonCardComponent,
+    TruncatePipe,
   ],
   imports: [
     CommonModule,
@@ -28,10 +30,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   exports: [
     FormsModule,
-    TruncatePipe,
+    //Components
     HeroSectionComponent,
+    SearchInputComponent,
     ProductCardComponent,
     SkeletonCardComponent,
+    // Pipes
+    TruncatePipe,
   ],
 })
 export class SharedModule {}
