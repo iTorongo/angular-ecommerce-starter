@@ -1,0 +1,1 @@
+export const HOME_FEATURED_PRODUCTS = 8;
