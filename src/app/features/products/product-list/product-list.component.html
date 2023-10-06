@@ -4,13 +4,13 @@
     <h1>This week's featured products</h1>
     <div class="sort-by">
       <span class="text-secondary">Sort by</span>
-      <app-select-input [options]="sortOptions" [defaultOptionLabel]="'Most relevant'" [fieldName]="sortBy"
+      <app-select-input [options]="sortOptions" [defaultOptionLabel]="'Most relevant'" [fieldName]="sortBy()"
         (select)="onSelect($event)" />
     </div>
   </div>
   <div class="row">
     <ng-container *ngIf="(products$ | async)?.products as products; else loading">
-      <div class="col-2" *ngFor="let product of products | sort: sortBy">
+      <div class="col-2" *ngFor="let product of products | sort: sortBy()">
         <app-product-card [product]="product"></app-product-card>
       </div>
       <app-empty *ngIf="products.length  === 0" />

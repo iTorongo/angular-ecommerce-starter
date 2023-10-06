@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { Observable } from 'rxjs';
 import { SortBy } from '../../../core/enums/sort.enum';
@@ -14,13 +14,12 @@ export class ProductListComponent implements OnInit {
   products$: Observable<ProductsResponse> = new Observable();
   fakeProducts = Array(12);
   sortOptions: Option[] = [];
-  sortBy: keyof Product;
+  sortBy = signal<string>('');
 
   constructor(
     private productService: ProductsService,
     private utils: UtilsService
   ) {
-    this.sortBy = '' as keyof Product;
     this.sortOptions = this.utils.generateOptionKeyValue(SortBy);
   }
 
@@ -31,7 +30,7 @@ export class ProductListComponent implements OnInit {
   }
 
   onSelect(value: string) {
-    this.sortBy = value as keyof Product;
+    this.sortBy.set(value);
   }
 
   ngOnInit(): void {
