@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   HeroSectionComponent,
   ProductCardComponent,
@@ -10,7 +9,7 @@ import {
   SkeletonCardComponent,
 } from './components/';
 import { TruncatePipe } from './pipes';
-import { ButtonComponent } from '../standalone/components';
+import { ButtonComponent, IconComponent } from '../standalone/components';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,8 @@ import { ButtonComponent } from '../standalone/components';
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-    FontAwesomeModule,
     ButtonComponent,
+    IconComponent,
   ],
   exports: [
     FormsModule,

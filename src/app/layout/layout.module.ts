@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { DefaultLayoutComponent } from './default-layout/default-layout.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconComponent } from '../standalone/components/icon/icon.component';
 
 @NgModule({
   declarations: [DefaultLayoutComponent, HeaderComponent],
-  imports: [CommonModule, RouterModule, FontAwesomeModule],
+  imports: [CommonModule, RouterModule, IconComponent],
   exports: [DefaultLayoutComponent, HeaderComponent],
 })
 export class LayoutModule {}

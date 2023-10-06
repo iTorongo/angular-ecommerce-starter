@@ -1,18 +1,12 @@
 import { Component } from '@angular/core';
-import {
-  faBars,
-  faXmark,
-  faCartShopping,
-} from '@fortawesome/free-solid-svg-icons';
+import { IconType } from '../../core/enums/icons.enum';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  faBars = faBars;
-  faXmark = faXmark;
-  faCartShopping = faCartShopping;
+  readonly IconType = IconType;
 
   menuOpen = false;
 

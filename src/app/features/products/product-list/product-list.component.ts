@@ -11,10 +11,14 @@ import { Product, ProductsResponse } from '***REMOVED***app/core/types';
 })
 export class ProductListComponent implements OnInit {
   public products$: Observable<ProductsResponse> = new Observable();
+  sortOptions = Object.values(SortBy)?.map((key) => key);
+  sortBy: keyof Product;
 
   fakeProducts = Array(12);
 
-  constructor(private productService: ProductsService) {}
+  constructor(private productService: ProductsService) {
+    this.sortBy = '' as keyof Product;
+  }
 
   onSearch(searchValue: string) {
     this.products$ = searchValue

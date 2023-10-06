@@ -1,8 +1,18 @@
 <section class="products">
   <app-search-input (search)="onSearch($event)" />
+  <div class="products-header">
+    <h1>This week's featured products</h1>
+    <div class="sort-by">
+      <span class="text-secondary">Sort by</span>
+      <select class="sort-select-input" [(ngModel)]="sortBy">
+        <option [value]=''>Most relevant</option>
+        <option *ngFor="let option of sortOptions" [value]="option">{{option}}</option>
+      </select>
+    </div>
+  </div>
   <div class="row">
     <ng-container *ngIf="(products$ | async)?.products as products; else loading">
-      <div class="col-2" *ngFor="let product of products">
+      <div class="col-2" *ngFor="let product of products | sort: sortBy">
         <app-product-card [product]="product"></app-product-card>
       </div>
       <app-empty *ngIf="products.length  === 0" />

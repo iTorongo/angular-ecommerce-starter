@@ -1,7 +1,7 @@
 <div class="product-details-container" *ngIf="product$ | async as product">
     <div class="product-details-content">
         <div class="back-to">
-            <fa-icon [icon]="faArrowLeftLong" class="back-icon" (click)="backTo()"></fa-icon>
+            <app-icon class="back-icon" (click)="backTo()" [iconType]="IconType.LEFT_ARROW" />
         </div>
         <div class="row">
             <div class="col-6">
@@ -20,7 +20,7 @@
                             {{product.description}}
                         </p>
                         <p class="product-rating">
-                            <fa-icon [icon]="faStar" class="product-rating-icon"></fa-icon>
+                            <app-icon class="product-rating-icon" (click)="backTo()" [iconType]="IconType.STAR" />
                             {{product.rating}}
                         </p>
                     </div>

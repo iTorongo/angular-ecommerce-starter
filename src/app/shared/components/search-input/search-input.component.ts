@@ -1,19 +1,14 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import {
-  faMagnifyingGlass,
-  faCircleXmark,
-} from '@fortawesome/free-solid-svg-icons';
-
+import { IconType } from '../../../core/enums/icons.enum';
 @Component({
   selector: 'app-search-input',
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss'],
 })
 export class SearchInputComponent implements OnInit {
-  faMagnifyingGlass = faMagnifyingGlass;
-  faCircleXmark = faCircleXmark;
+  readonly IconType = IconType;
   @Output() search: EventEmitter<string> = new EventEmitter();
   searchQuery = new FormControl('');
 

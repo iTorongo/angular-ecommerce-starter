@@ -14,11 +14,9 @@
     </ul>
     <div class="nav-right">
       <div class="navbar-toggle" (click)="toggleMenu()">
-        <fa-icon *ngIf="!menuOpen" [icon]="faBars"></fa-icon>
-        <fa-icon *ngIf="menuOpen" [icon]="faXmark"></fa-icon>
+        <app-icon [iconType]="!menuOpen ? IconType.BARS : IconType.CLOSE" />
       </div>
-
-      <fa-icon class="cart" [icon]="faCartShopping"></fa-icon>
+      <app-icon class="cart" [iconType]="IconType.CART" />
     </div>
 
   </nav>

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProductsService } from '../products.service';
-import { faArrowLeftLong, faStar } from '@fortawesome/free-solid-svg-icons';
 import { Location } from '@angular/common';
+import { IconType } from '../../../core/enums/icons.enum';
 
 @Component({
   selector: 'app-product-details',
@@ -11,8 +11,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent implements OnInit {
-  faArrowLeftLong = faArrowLeftLong;
-  faStar = faStar;
+  readonly IconType = IconType;
   public product$: Observable<any> = new Observable();
 
   /**
