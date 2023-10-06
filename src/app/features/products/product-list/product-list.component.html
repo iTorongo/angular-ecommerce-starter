@@ -4,10 +4,8 @@
     <h1>This week's featured products</h1>
     <div class="sort-by">
       <span class="text-secondary">Sort by</span>
-      <select class="sort-select-input" [(ngModel)]="sortBy">
-        <option [value]=''>Most relevant</option>
-        <option *ngFor="let option of sortOptions" [value]="option">{{option}}</option>
-      </select>
+      <app-select-input [options]="sortOptions" [defaultOptionLabel]="'Most relevant'" [fieldName]="sortBy"
+        (select)="onSelect($event)" />
     </div>
   </div>
   <div class="row">
