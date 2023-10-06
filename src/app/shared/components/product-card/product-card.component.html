@@ -1,0 +1,17 @@
+<div class="product-card" [routerLink]="['/products', product.id]">
+  <div class="product-image">
+    <img src="{{ product.images[0] }}" alt={{product.title}} />
+    <span *ngIf="displayDiscount" class="product-discount">-{{ product?.discountPercentage | number : '1.0-0' }}%</span>
+  </div>
+  <div class="product-info">
+    <h4 class="product-title text-truncate">{{ product.title }}</h4>
+    <p class="product-description text-secondary">
+      {{product.description }}
+    </p>
+    <p class="product-rating">
+      <fa-icon [icon]="faStar" class="product-rating-icon"></fa-icon>
+      {{product.rating}}
+    </p>
+    <div class="product-price">${{product.price}}</div>
+  </div>
+</div>
