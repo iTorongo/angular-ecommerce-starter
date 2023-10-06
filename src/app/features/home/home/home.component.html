@@ -1,1 +1,11 @@
-<div>Home works</div>
+<app-hero-section />
+<section class="feature-products">
+    <h1>This week's featured products</h1>
+    <div class="row">
+        <ng-container *ngIf="(featureProducts$ | async)?.products as products;">
+            <div class="col-3" *ngFor="let product of products">
+                <app-product-card [product]="product" [displayDiscount]="true"></app-product-card>
+            </div>
+        </ng-container>
+    </div>
+</section>
