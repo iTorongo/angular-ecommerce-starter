@@ -1,0 +1,4 @@
+<select class="select-input" [ngModel]="fieldName" (ngModelChange)="onChange($event)">
+    <option [value]="''">{{defaultOptionLabel}}</option>
+    <option *ngFor="let option of options" [value]="option.value">{{option.label}}</option>
+</select>
