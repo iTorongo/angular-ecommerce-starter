@@ -1,1 +1,37 @@
-<div>Product details works</div>
+<div class="product-details-container" *ngIf="product$ | async as product">
+    <div class="product-details-content">
+        <div class="back-to">
+            <fa-icon [icon]="faArrowLeftLong" class="back-icon" (click)="backTo()"></fa-icon>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="product-image">
+                    <img src="{{ product.images[0] }}" alt="Product Image">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="product-info">
+                    <div>
+                        <h2 class="product-name">{{product.title}}</h2>
+                        <p class="product-brand">Brand: {{product.brand}}</p>
+                        <p class="product-category text-secondary">Category: {{product.category}}</p>
+                        <p class="product-stock text-secondary">In stock {{product.stock}}</p>
+                        <p class="product-description">
+                            {{product.description}}
+                        </p>
+                        <p class="product-rating">
+                            <fa-icon [icon]="faStar" class="product-rating-icon"></fa-icon>
+                            {{product.rating}}
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="product-price">${{product.price}}</p>
+                        <app-button label="Add to cart" type='primary' size='large' (click)="addToCart()" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
