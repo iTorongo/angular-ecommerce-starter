@@ -11,6 +11,7 @@ import {
 import { TruncatePipe, SortPipe } from './pipes';
 import { ButtonComponent, IconComponent } from '../standalone/components';
 import { SelectInputComponent } from './components/select-input/select-input.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SelectInputComponent } from './components/select-input/select-input.com
     ProductCardComponent,
     SkeletonCardComponent,
     SelectInputComponent,
+    CartComponent,
     TruncatePipe,
     SortPipe,
   ],
@@ -38,6 +40,7 @@ import { SelectInputComponent } from './components/select-input/select-input.com
     ProductCardComponent,
     SkeletonCardComponent,
     SelectInputComponent,
+    CartComponent,
     // Pipes
     TruncatePipe,
     SortPipe,

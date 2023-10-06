@@ -1,0 +1,19 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/colors";
+.cart {
+  position: relative;
+  .cart-icon {
+    cursor: pointer;
+    font-size: $font-size-5;
+  }
+  .cart-count {
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    font-size: $font-size-3;
+    border-radius: 50%;
+    background-color: $green-6;
+    color: $text-white;
+    padding: $spacing-1 $spacing-2;
+  }
+}
