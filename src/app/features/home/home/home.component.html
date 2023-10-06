@@ -2,10 +2,15 @@
 <section class="feature-products">
     <h1>This week's featured products</h1>
     <div class="row">
-        <ng-container *ngIf="(featureProducts$ | async)?.products as products;">
+        <ng-container *ngIf="(featureProducts$ | async)?.products as products; else loading">
             <div class="col-3" *ngFor="let product of products">
                 <app-product-card [product]="product" [displayDiscount]="true"></app-product-card>
             </div>
         </ng-container>
+        <ng-template #loading>
+            <div class="col-3" *ngFor="let product of fakeProducts">
+                <app-skeleton-card />
+            </div>
+        </ng-template>
     </div>
 </section>
