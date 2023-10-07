@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { FAKE_CART_ITEMS } from '../../../core/const/fake.data';
 import { Cart, CartRequest } from '***REMOVED***app/core/types';
-import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -24,13 +23,24 @@ export class CartService {
     return this.cart$;
   }
 
-  addToCart(payload: CartRequest): Observable<CartRequest> {
-    // Updating fake cart items as the api don't update server carts
-    this.cartItems.totalProducts = this.cartItems.totalProducts + 1;
+  addToCart(payload: CartRequest): Observable<Cart> {
+    this.cartItems = {
+***REMOVED***this.cartItems,
+      totalProducts: this.cartItems.totalProducts + 1,
+      products: [...this.cartItems.products, ...payload.products],
+    };
+    return of(this.cartItems);
+  }
 
-    return this.http.post<CartRequest>(
-      `${environment.apiUrl}/carts/add`,
-      payload
-    );
+  removeFromCart(productId: number): Observable<Cart> {
+    this.cartItems = {
+***REMOVED***this.cartItems,
+      totalProducts: this.cartItems.totalProducts - 1,
+      products: this.cartItems.products.filter(
+        (product) => product.id !== productId
+      ),
+    };
+
+    return of(this.cartItems);
   }
 }
