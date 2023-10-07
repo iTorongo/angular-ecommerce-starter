@@ -30,10 +30,7 @@ export class ProductDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.productId = parseInt(
-      this.route.snapshot.paramMap.get('productId') ?? '',
-      10
-    );
+    this.productId = Number(this.route.snapshot.paramMap.get('productId'));
     if (this.productId) {
       this.getProduct();
     }

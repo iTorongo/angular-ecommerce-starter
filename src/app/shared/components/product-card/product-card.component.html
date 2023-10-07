@@ -12,6 +12,6 @@
       <app-icon class="product-rating-icon" [iconType]="IconType.STAR" />
       {{product.rating}}
     </p>
-    <div class="product-price">${{product.price}}</div>
+    <div class="product-price">{{product.price | currency : 'USD' : 'symbol' : '1.0-0'}}</div>
   </div>
 </div>
