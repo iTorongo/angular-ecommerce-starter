@@ -5,11 +5,11 @@ import { IconType } from '../../../core/enums/icons.enum';
 import { CartService } from '../../services/cart/cart.service';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss'],
+  selector: 'app-cart-overview',
+  templateUrl: './cart-overview.component.html',
+  styleUrls: ['./cart-overview.component.scss'],
 })
-export class CartComponent implements OnInit {
+export class CartOverviewComponent implements OnInit {
   public cart$: Observable<Cart> = new Observable();
 
   readonly IconType = IconType;

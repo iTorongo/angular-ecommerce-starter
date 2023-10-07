@@ -7,11 +7,11 @@ import {
   ProductCardComponent,
   SearchInputComponent,
   SkeletonCardComponent,
+  CartOverviewComponent,
+  SelectInputComponent,
 } from './components/';
 import { TruncatePipe, SortPipe } from './pipes';
 import { ButtonComponent, IconComponent } from '../standalone/components';
-import { SelectInputComponent } from './components/select-input/select-input.component';
-import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { CartComponent } from './components/cart/cart.component';
     ProductCardComponent,
     SkeletonCardComponent,
     SelectInputComponent,
-    CartComponent,
+    CartOverviewComponent,
     TruncatePipe,
     SortPipe,
   ],
@@ -40,7 +40,7 @@ import { CartComponent } from './components/cart/cart.component';
     ProductCardComponent,
     SkeletonCardComponent,
     SelectInputComponent,
-    CartComponent,
+    CartOverviewComponent,
     // Pipes
     TruncatePipe,
     SortPipe,
