@@ -43,4 +43,11 @@ export class CartService {
 
     return of(this.cartItems);
   }
+
+  // addToCart(payload: CartRequest): Observable<Cart> {
+  // return this.http.post<CartRequest>(
+  //   `${environment.apiUrl}/carts/add`,
+  //   payload
+  // );
+  //}
 }
