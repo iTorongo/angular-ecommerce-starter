@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DefaultLayoutComponent } from './default-layout.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DefaultLayoutComponent', () => {
   let component: DefaultLayoutComponent;
@@ -8,7 +9,8 @@ describe('DefaultLayoutComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DefaultLayoutComponent]
+      declarations: [DefaultLayoutComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(DefaultLayoutComponent);
     component = fixture.componentInstance;

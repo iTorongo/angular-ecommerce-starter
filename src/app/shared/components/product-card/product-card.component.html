@@ -1,4 +1,4 @@
-<div class="product-card" [routerLink]="['/products', product.id]">
+<div class="product-card" *ngIf="product" [routerLink]="['/products', product.id]">
   <div class="product-image">
     <img src="{{ product.images[0] }}" alt={{product.title}} />
     <span *ngIf="displayDiscount" class="product-discount">-{{ product.discountPercentage | number : '1.0-0' }}%</span>

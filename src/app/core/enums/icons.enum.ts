@@ -6,4 +6,5 @@ export enum IconType {
   STAR = 'STAR',
   SEARCH = 'SEARCH',
   CIRCLE_CLOSE = 'CIRCLE_CLOSE',
+  INFO = 'INFO',
 }

@@ -9,6 +9,7 @@ import {
   faStar,
   faMagnifyingGlass,
   faCircleXmark,
+  faInfo,
 } from '@fortawesome/free-solid-svg-icons';
 import { IconType } from '***REMOVED***app/core/enums/icons.enum';
 
@@ -20,9 +21,10 @@ import { IconType } from '***REMOVED***app/core/enums/icons.enum';
   styleUrls: ['./icon.component.scss'],
 })
 export class IconComponent {
-  @Input() iconType!: IconType;
+  @Input() iconType: IconType = IconType.INFO;
 
   fontAwesomeIcon: Record<string, any> = {
+    [IconType.INFO]: faInfo,
     [IconType.BARS]: faBars,
     [IconType.CLOSE]: faXmark,
     [IconType.CART]: faCartShopping,
