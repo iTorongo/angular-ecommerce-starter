@@ -21,6 +21,15 @@ const routes: Routes = [
       ),
   },
   {
+    path: AppRoutes.FIND_STORE,
+    title: 'Find store',
+    component: DefaultLayoutComponent,
+    loadChildren: () =>
+      import('./features/find-store/find-store.module').then(
+        (module) => module.FindStoreModule
+      ),
+  },
+  {
     path: AppRoutes.NOT_FOUND,
     title: 'Not found',
     component: DefaultLayoutComponent,
