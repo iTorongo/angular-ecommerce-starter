@@ -1,0 +1,35 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/colors";
+
+.cart-container {
+  padding-top: $spacing-8;
+  .cart-content {
+    border-radius: $border-radius-8;
+    box-shadow: $small-shadow;
+    padding: $spacing-4;
+    background-color: $bg-white;
+    .cart-header {
+      color: $default-color;
+      text-align: center;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $gray-3;
+      padding: $spacing-4;
+      margin: $spacing-2 auto;
+      border-radius: $border-radius-4;
+      max-width: 500px;
+      .product-title {
+        margin-bottom: $spacing-1;
+      }
+      .product-price {
+        font-weight: $font-weight-500;
+      }
+      .remove-product {
+        cursor: pointer;
+      }
+    }
+  }
+}

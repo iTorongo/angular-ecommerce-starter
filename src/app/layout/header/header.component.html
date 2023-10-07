@@ -12,7 +12,8 @@
       <div class="navbar-toggle" (click)="toggleMenu()">
         <app-icon [iconType]="!menuOpen ? IconType.BARS : IconType.CLOSE" />
       </div>
-      <app-cart-overview />
+      <a [routerLink]="['/cart']" class="cart-link">
+        <app-cart-overview /></a>
     </div>
 
   </nav>

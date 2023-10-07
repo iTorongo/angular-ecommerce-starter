@@ -41,9 +41,6 @@
     padding: $spacing-4;
     min-height: 160px;
     .product-title {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       font-weight: $font-weight-500;
     }
 

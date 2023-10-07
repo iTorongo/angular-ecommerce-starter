@@ -1,0 +1,24 @@
+<section class="cart-container">
+    <div class="cart-content">
+        <div class="cart-header">
+            <h3>Your order</h3>
+        </div>
+        <ng-container *ngIf="(cart$ | async)?.products as cartProducts">
+            <div class="cart-item" *ngFor="let product of cartProducts">
+                <div class="product-info">
+                    <h4  class="product-title text-truncate">{{ product.title }}</h4 >
+                    <p class="product-price text-secondary">
+                        {{ product.price | currency: "USD":"symbol":"1.0-0" }}
+                    </p>
+                </div>
+                <div class="product-quentity">
+                    Quantity: {{ product.quantity}}
+                </div>
+                <div class="remove-product" (click)="removeFromCart(product.id)">
+                    <app-icon class="remove-icon" [iconType]="IconType.CIRCLE_CLOSE" />
+                </div>
+            </div>
+            <app-empty *ngIf="cartProducts.length  === 0" />
+        </ng-container>
+    </div>
+</section>

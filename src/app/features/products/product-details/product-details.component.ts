@@ -47,6 +47,8 @@ export class ProductDetailsComponent implements OnInit {
         {
           id: product.id,
           quantity: 1,
+          title: product.title,
+          price: product.price,
         },
       ],
     };

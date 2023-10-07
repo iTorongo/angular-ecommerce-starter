@@ -30,6 +30,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: AppRoutes.CART,
+    title: 'Cart',
+    component: DefaultLayoutComponent,
+    loadChildren: () =>
+      import('./features/cart/cart.module').then((module) => module.CartModule),
+  },
+  {
     path: AppRoutes.NOT_FOUND,
     title: 'Not found',
     component: DefaultLayoutComponent,
