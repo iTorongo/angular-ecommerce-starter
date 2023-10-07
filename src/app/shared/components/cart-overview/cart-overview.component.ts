@@ -18,6 +18,6 @@ export class CartOverviewComponent implements OnInit {
 
   ngOnInit() {
     this.cart$ = this.cartService.getCart();
-    this.cartService.initialGetCart();
+    this.cartService.triggerGetCart();
   }
 }

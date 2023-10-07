@@ -14,7 +14,7 @@ export class CartService {
 
   constructor(private http: HttpClient) {}
 
-  public initialGetCart(): void {
+  public triggerGetCart(): void {
     of(this.cartItems)?.subscribe((res) => {
       this.cart$.next(res);
     });

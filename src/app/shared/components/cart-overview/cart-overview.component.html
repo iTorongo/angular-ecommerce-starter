@@ -1,4 +1,4 @@
-<div class="cart">
+<div class="cart-overview ">
     <app-icon class="cart-icon" [iconType]="IconType.CART" />
     <ng-container *ngIf="(cart$| async) as cart">
         <span class="cart-count">{{cart.totalProducts}}</span>

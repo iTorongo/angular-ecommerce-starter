@@ -55,7 +55,7 @@ export class ProductDetailsComponent implements OnInit {
 
   addProductToCart(requestPayload: CartRequest) {
     this.cartService.addToCart(requestPayload)?.subscribe(() => {
-      this.cartService.initialGetCart();
+      this.cartService.triggerGetCart();
     });
   }
 
