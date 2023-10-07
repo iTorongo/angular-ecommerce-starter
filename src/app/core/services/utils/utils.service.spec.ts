@@ -10,7 +10,15 @@ describe('UtilsService', () => {
     service = TestBed.inject(UtilsService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('should capitalize first letter of given string', () => {
+    expect(service.capitalizeFirstLetter('arnaf')).toEqual('Arnaf');
+    expect(service.capitalizeFirstLetter('ARNAF')).toEqual('Arnaf');
+    expect(service.capitalizeFirstLetter('aRNAf')).toEqual('Arnaf');
+  });
+
+  it('should convert object to options array with label and value', () => {
+    expect(service.generateOptionKeyValue({ value: 'price' })).toEqual([
+      { label: 'Price', value: 'price' },
+    ]);
   });
 });
