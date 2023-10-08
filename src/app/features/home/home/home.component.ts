@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HOME_FEATURED_PRODUCTS } from '***REMOVED***app/core/const/config.const';
+import { HOME_FEATURED_PRODUCTS } from '***REMOVED***app/core/constants/config.constants';
 import { ProductsResponse } from '***REMOVED***app/core/types';
 import { HomeService } from '../home.service';
 

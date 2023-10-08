@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HeaderMenuItems } from '../../core/const/ui.const';
+import { HeaderMenuItems } from '../../core/constants/ui.constants';
 import { IconType } from '../../core/enums/icons.enum';
 @Component({
   selector: 'app-header',
@@ -8,7 +8,7 @@ import { IconType } from '../../core/enums/icons.enum';
 })
 export class HeaderComponent {
   readonly IconType = IconType;
-  readonly HeaderMenuItems = HeaderMenuItems
+  readonly HeaderMenuItems = HeaderMenuItems;
 
   menuOpen = false;
 

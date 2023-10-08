@@ -5,8 +5,8 @@ import { ProductsService } from '../products.service';
 import { Location } from '@angular/common';
 import { IconType } from '../../../core/enums/icons.enum';
 import { CartService } from '***REMOVED***app/shared/services/cart/cart.service';
-import { Cart, CartRequest, Product } from '***REMOVED***app/core/types';
-import { DUMMY_USER_ID } from '***REMOVED***app/core/const/config.const';
+import { CartRequest, Product } from '***REMOVED***app/core/types';
+import { DUMMY_USER_ID } from '***REMOVED***app/core/constants/config.constants';
 
 @Component({
   selector: 'app-product-details',

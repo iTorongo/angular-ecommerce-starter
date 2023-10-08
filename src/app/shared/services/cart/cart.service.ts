@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { FAKE_CART_ITEMS } from '../../../core/const/fake.data';
+import { FAKE_CART_ITEMS } from '../../../core/constants/fake.data';
 import { Cart, CartRequest } from '***REMOVED***app/core/types';
 
 @Injectable({

@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
   products$: Observable<ProductsResponse> = new Observable();
   fakeProducts = Array(12);
   sortOptions: Option[] = [];
-  sortBy = signal<string>('');
+  sortBy: string = '';
 
   constructor(
     private productService: ProductsService,
@@ -30,7 +30,7 @@ export class ProductListComponent implements OnInit {
   }
 
   onSelect(value: string) {
-    this.sortBy.set(value);
+    this.sortBy = value;
   }
 
   ngOnInit(): void {
