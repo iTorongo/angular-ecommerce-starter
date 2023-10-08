@@ -1,5 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+/**
+ * Truncate given string and add ...
+ */
 @Pipe({
   name: 'truncate',
 })

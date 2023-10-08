@@ -9,10 +9,16 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent {
+  /**
+   * Inputs of button component
+   */
   @Input() label: string = 'Button';
   @Input() type: 'primary' | 'secondary' = 'primary';
   @Input() size: 'small' | 'normal' | 'large' = 'normal';
 
+  /**
+   * Emit button click event
+   */
   @Output() buttonClick = new EventEmitter<void>();
 
   onClick(): void {

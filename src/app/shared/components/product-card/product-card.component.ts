@@ -10,6 +10,14 @@ import { Product } from '../../../core/types';
 })
 export class ProductCardComponent {
   readonly IconType = IconType;
+
+  /**
+   * Get product details from parent component
+   */
   @Input({ required: true }) product!: Product;
+
+  /**
+   * Determine to display/hide discount on card
+   */
   @Input() displayDiscount: boolean = false;
 }

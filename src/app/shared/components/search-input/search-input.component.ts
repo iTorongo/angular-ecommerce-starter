@@ -17,14 +17,32 @@ import { IconType } from '../../../core/enums/icons.enum';
 })
 export class SearchInputComponent implements OnInit, OnDestroy {
   readonly IconType = IconType;
+
+  /**
+   * Emit search value to parent component
+   */
   @Output() search: EventEmitter<string> = new EventEmitter();
 
+  /**
+   * Store subscriptions to destroy
+   */
   private subscription!: Subscription;
 
+  /**
+   * Search query as form control
+   */
   searchQuery = new FormControl('');
 
+  /**
+   * Constructor
+   * @param route
+   * @param router
+   */
   constructor(protected route: ActivatedRoute, protected router: Router) {}
 
+  /**
+   * On init listen to change search query value and fire emitter
+   */
   ngOnInit() {
     this.subscription = this.searchQuery.valueChanges
       .pipe(debounceTime(400), distinctUntilChanged())
@@ -36,14 +54,24 @@ export class SearchInputComponent implements OnInit, OnDestroy {
     this.syncQueryParamWithSearch();
   }
 
+  /**
+   * Unsubscribe on destroy
+   */
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
+  /**
+   * Clear search field
+   */
   onClearSearch() {
     this.searchQuery.reset();
   }
 
+  /**
+   * Sync provided search value with url
+   * @param value
+   */
   syncSearchWithQueryParam(value: string | null): void {
     const params: Params = [];
     params['search'] = value;
@@ -53,6 +81,10 @@ export class SearchInputComponent implements OnInit, OnDestroy {
     });
   }
 
+  /**
+   * Sync search value from url if exists
+   * @returns
+   */
   syncQueryParamWithSearch(): void {
     const params: Params = this.route.snapshot.queryParams;
     if (Object.keys(params).length === 0) {

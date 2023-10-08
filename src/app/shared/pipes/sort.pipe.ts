@@ -1,5 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+/**
+ * Sort pipe to order list of objects based on field name
+ */
 @Pipe({
   name: 'sort',
 })

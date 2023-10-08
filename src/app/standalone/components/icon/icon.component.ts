@@ -21,8 +21,14 @@ import { IconType } from '***REMOVED***app/core/enums/icons.enum';
   styleUrls: ['./icon.component.scss'],
 })
 export class IconComponent {
+  /**
+   * Input icon type from parent component
+   */
   @Input() iconType: IconType = IconType.INFO;
 
+  /**
+   * Defined font awesome icon as Record to use it on template
+   */
   fontAwesomeIcon: Record<string, any> = {
     [IconType.INFO]: faInfo,
     [IconType.BARS]: faBars,
