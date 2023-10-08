@@ -1,6 +1,13 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { IconType } from '../../../core/enums/icons.enum';
 @Component({
@@ -8,15 +15,18 @@ import { IconType } from '../../../core/enums/icons.enum';
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss'],
 })
-export class SearchInputComponent implements OnInit {
+export class SearchInputComponent implements OnInit, OnDestroy {
   readonly IconType = IconType;
   @Output() search: EventEmitter<string> = new EventEmitter();
+
+  private subscription!: Subscription;
+
   searchQuery = new FormControl('');
 
   constructor(protected route: ActivatedRoute, protected router: Router) {}
 
   ngOnInit() {
-    this.searchQuery.valueChanges
+    this.subscription = this.searchQuery.valueChanges
       .pipe(debounceTime(400), distinctUntilChanged())
       .subscribe((value) => {
         this.search.emit(value ?? '');
@@ -24,6 +34,10 @@ export class SearchInputComponent implements OnInit {
       });
 
     this.syncQueryParamWithSearch();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   onClearSearch() {
