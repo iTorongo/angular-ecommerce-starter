@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { FAKE_CART_ITEMS } from '../../../core/constants/fake.data';
-import { Cart, CartRequest } from '***REMOVED***app/core/types';
+import { Cart, CartRequest } from '../../../core/types';
 
 /**
  * This service provide mock data as the public api end point doesn't support all the actions
