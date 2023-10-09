@@ -47,7 +47,7 @@ export class CartService {
    */
   addToCart(payload: CartRequest): Observable<Cart> {
     this.cartItems = {
-***REMOVED***this.cartItems,
+      ...this.cartItems,
       totalProducts: this.cartItems.totalProducts + 1,
       products: [...this.cartItems.products, ...payload.products],
     };
@@ -61,7 +61,7 @@ export class CartService {
    */
   removeFromCart(productId: number): Observable<Cart> {
     this.cartItems = {
-***REMOVED***this.cartItems,
+      ...this.cartItems,
       totalProducts: this.cartItems.totalProducts - 1,
       products: this.cartItems.products.filter(
         (product) => product.id !== productId

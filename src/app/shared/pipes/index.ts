@@ -1,2 +1,2 @@
-export * from './truncate.pipe';
-export * from './sort.pipe';
+export * from './truncate/truncate.pipe';
+export * from './sort/sort.pipe';

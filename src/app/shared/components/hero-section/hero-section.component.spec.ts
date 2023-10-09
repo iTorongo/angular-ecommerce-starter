@@ -2,7 +2,7 @@ import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { ButtonComponent } from '***REMOVED***app/standalone/components';
+import { ButtonComponent } from 'src/app/standalone/components';
 
 import { HeroSectionComponent } from './hero-section.component';
 

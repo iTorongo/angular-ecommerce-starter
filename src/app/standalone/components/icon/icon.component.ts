@@ -11,7 +11,7 @@ import {
   faCircleXmark,
   faInfo,
 } from '@fortawesome/free-solid-svg-icons';
-import { IconType } from '***REMOVED***app/core/enums/icons.enum';
+import { IconType } from 'src/app/core/enums/icons.enum';
 
 @Component({
   selector: 'app-icon',
