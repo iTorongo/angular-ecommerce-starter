@@ -3,7 +3,7 @@ import { ProductsService } from '../products.service';
 import { Observable } from 'rxjs';
 import { SortBy } from '../../../core/enums/sort.enum';
 import { Option, ProductsResponse } from '../../../core/types';
-import { UtilsService } from '../../../core/services/utils/utils.service';
+import { UtilsService } from '../../../shared/services/utils/utils.service';
 
 @Component({
   selector: 'app-product-list',
